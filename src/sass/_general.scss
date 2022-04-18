@@ -1,0 +1,646 @@
+/* General styles */
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Montserrat';
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 16px;
+}
+
+body {
+	position: relative;
+	width: 100%;
+	@include maintextcol;
+	overflow-x: hidden;
+	@include mainbgcol;
+	line-height: 32px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a {
+	margin: 0;
+	padding: 0;
+	margin-block: 0;
+	margin-inline: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 2.625rem;
+	font-weight: 300;
+	text-transform: uppercase;
+	line-height: 59px;
+}
+
+a {
+	@include maintextcol;
+}
+
+a,
+p {
+	font-size: 1.125rem;
+}
+
+button {
+	@include brrsec;
+	@include secbgcol;
+	@include sectextcol;
+	text-transform: uppercase;
+	padding: 20px 63px;
+	border: 1px solid $colorfirst;
+	cursor: pointer;
+}
+
+li {
+	margin-left: 20px;
+}
+
+/* User settings */
+
+.container {
+	max-width: 1216px;
+	margin: 0 auto;
+	padding: 0 20px;
+	&-slider {
+		position: relative;
+	}
+	&--first {
+		background: url('../img/bg.png') center center/cover no-repeat;
+	}
+}
+
+.greenbg {
+	@include secbgcol;
+}
+
+.firstblock {
+	background: url('../img/bg-main.jpg') center/cover no-repeat;
+	height: 750px;
+	display: none;
+}
+
+/* Header */
+
+.main {
+	display: grid;
+	grid-template-columns: 50% auto;
+	gap: 60px;
+	&-header {
+		position: absolute;
+		left: 0;
+		z-index: 100;
+		width: 100%;
+		display: flex;
+		justify-content: space-between;
+		.burger {
+			display: none;
+		}
+	}
+	&-footer {
+		padding-top: 6.25rem;
+		@include mtopmax;
+		&__wrapper {
+			display: grid;
+			grid-template-columns: repeat(auto-fill, minmax(416px, 1fr));
+			gap: 104px;
+			@include mainbgcol;
+			padding: 80px;
+			@include brrsec;
+		}
+		&__descr {
+			@include ptopmed;
+		}
+		&__links {
+			padding: 60px 0;
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			gap: 184px;
+			&--link {
+				position: relative;
+				font-size: inherit;
+				@include sectextcol;
+				text-decoration: none;
+				&::after,
+				&::before {
+					position: absolute;
+					top: 0;
+					display: block;
+				}
+				&:nth-child(1):after {
+					height: 8px;
+					width: 42px;
+					content: url('../icons/long-arrow-right.svg');
+					right: -57px;
+				}
+				&:nth-child(2):before {
+					content: url('../icons/house.svg');
+					left: -39px;
+					top: 0px;
+				}
+			}
+		}
+	}
+	&__nav {
+		display: flex;
+		align-items: center;
+		ul {
+			display: grid;
+			grid-template-columns: repeat(5, auto);
+			gap: 60px;
+			align-items: center;
+			list-style-type: none;
+			li {
+				text-align: right;
+				@include sectextcol;
+				border-bottom: 2px solid rgba(255, 255, 255, 0);
+				transition: all 0.3s;
+				&:hover {
+					border-bottom: 2px solid #fff;
+				}
+			}
+		}
+	}
+	&__close {
+		display: none;
+	}
+	&__product {
+		display: flex;
+		justify-content: flex-end;
+		padding-right: 5%;
+		img {
+			padding-top: 98px;
+		}
+	}
+	&__text {
+		align-self: center;
+	}
+	&__heading {
+		@include sectextcol;
+	}
+	&__paragraph {
+		@include sectextcol;
+		@include ptopmed;
+	}
+	&__button {
+		@include mtopmed;
+		border: 1px solid $colorthird;
+	}
+	&__video {
+		display: grid;
+		grid-template-columns: 40px auto;
+		gap: 12px;
+		@include ptopmax;
+		p {
+			@include sectextcol;
+			align-self: center;
+		}
+	}
+}
+
+/* User settings */
+
+/* About product */
+
+.whatisit {
+	@include mtopmax;
+	position: relative;
+	&__wrapper {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-columns: repeat(auto-fill, minmax(488px, 1fr));
+		gap: 136px;
+	}
+	&__paragraph {
+		@include ptopmed;
+	}
+	&__img {
+		z-index: 100;
+	}
+}
+
+.plant {
+	display: none;
+	&__left {
+		position: absolute;
+		bottom: -133px;
+		left: -200px;
+	}
+	&__right {
+		position: absolute;
+		top: -90px;
+		right: -200px;
+	}
+}
+
+/* Преимущества */
+
+.advantages {
+	position: relative;
+	@include mtopmax;
+	&__wrapper {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(354px, auto));
+		@include gapmin;
+	}
+	&__item {
+		ul {
+			@include ptopmin;
+		}
+	}
+	&__title {
+		font-size: 1.25rem; // 20px
+		font-weight: 600;
+		text-transform: none;
+		line-height: 28px;
+		@include ptopmin;
+	}
+	&__icon {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		@include mtopmed;
+		width: 6.25rem; // 100px
+		height: 6.25rem; // 100px
+		@include secbgcol;
+		border-radius: 100%;
+		// img {
+		// }
+	}
+	.plant__right {
+		right: -400px;
+		top: 167px;
+	}
+}
+
+/* Как это работает */
+
+.howitworks {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 200px;
+	@include mtopmax;
+	padding: 100px 0 120px;
+	&__container {
+		background: linear-gradient(to right, $colorfirst 50%, $colorlast 50%);
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+	}
+	&__descr {
+		@include ptopmed;
+	}
+	&__heading,
+	&__descr {
+		@include sectextcol;
+	}
+	&__shema {
+		display: flex;
+		gap: 3.75rem;
+	}
+}
+
+.shema {
+	&__elms {
+		position: relative;
+	}
+	&__arrow {
+		position: absolute;
+		left: -111px;
+		top: 0;
+		z-index: 1000;
+		&:nth-of-type(1) {
+			top: 22px;
+		}
+		&:nth-of-type(2) {
+			top: 284px;
+		}
+		&:nth-of-type(3) {
+			top: 440px;
+		}
+	}
+	&__item {
+		&:nth-child(2),
+		&:last-child {
+			padding-top: 40px;
+		}
+		&--title {
+			font-size: 1.875rem; // 30px
+			text-transform: none;
+			line-height: 30px;
+		}
+		&--descr {
+			line-height: 24px;
+		}
+	}
+}
+
+/* Блоки продукта и всего, что с ними связано */
+
+.product {
+	padding: 156px 0 0;
+	&__about {
+		display: grid;
+		grid-template-columns: auto 30.5rem; // 488px
+		gap: 4.5rem; // 72px
+	}
+	&__img {
+		width: 100%;
+		background: url('../img/product-bg.png') center/cover no-repeat;
+		img {
+			display: block;
+			margin: 0 auto;
+			width: 18.75rem; // 300px
+		}
+	}
+	&__descr {
+		@include ptopmed;
+	}
+	&__button {
+		@include mtopmed;
+	}
+	&__images {
+		display: flex;
+		justify-content: center;
+		gap: 2rem; //32px;
+		margin-top: 92px;
+		img {
+			width: 4.5rem; // 72px
+		}
+	}
+	&__button {
+		border: 1px solid $colorfirst;
+	}
+}
+
+/* Попап продукта */
+.swup-absolute {
+	display: none;
+	position: absolute;
+	padding: 20px;
+	top: 0;
+	right: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 1000;
+	@include mainbgcol;
+}
+
+/* Маркетплейсы */
+
+.places {
+	position: relative;
+	@include mtopmax;
+	&__images {
+		display: flex;
+		justify-content: space-between;
+		flex-wrap: wrap;
+		@include ptopmax;
+	}
+	&__item {
+		display: flex;
+		align-items: center;
+		img {
+			filter: grayscale(100%) opacity(25%);
+			transition: filter 0.3s ease-in-out;
+			&:hover {
+				filter: grayscale(0%) opacity(1);
+			}
+		}
+	}
+	& > .plant__left {
+		top: -63px;
+		left: -120px;
+	}
+	& > .plant__right {
+		right: -121px;
+		top: 16px;
+	}
+}
+
+/* Нас рекомендуют */
+
+.recommendations {
+	margin-top: 11.25rem; // 180px
+	padding-top: 6.125rem; // 98px
+	padding-bottom: 7.5rem; // 120px
+	&__heading {
+		@include sectextcol;
+	}
+	&__item {
+		position: relative;
+		img {
+			width: 100%;
+			@include brrmain;
+		}
+	}
+	&__name {
+		position: absolute;
+		bottom: 30px;
+		left: 20px;
+		padding: 2px 12px;
+		background-color: $colorsecond;
+	}
+	.swiper {
+		@include ptopmax;
+		padding-bottom: 5.625rem; // 90px
+		&-pagination {
+			color: #fff;
+			&-fraction {
+				bottom: 0;
+			}
+			&-current {
+				font-size: 1.5rem; // 24px
+			}
+		}
+	}
+}
+
+/* Раскрываем секреты и делимся опытом */
+
+.recipes {
+	padding-top: 7.5rem; // 120px
+	&__items {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(354px, 1fr));
+		gap: 30px;
+		@include ptopmax;
+	}
+	&__item {
+		img {
+			@include brrmain;
+			width: 100%;
+		}
+	}
+	&__button {
+		display: block;
+		margin: 60px auto 0;
+	}
+}
+
+/* FAQ */
+
+.faq {
+	@include mtopmax;
+	&__wrapper {
+		margin-top: 26px;
+	}
+	&-tab {
+		&:first-child > &__heading {
+			border-top: none;
+		}
+		&__heading {
+			position: relative;
+			font-weight: 600;
+			font-size: 1.25rem;
+			line-height: 30px;
+			border-bottom: 2px solid $colorfirst;
+			span {
+				padding-right: 360px;
+			}
+			&::after {
+				display: block;
+				position: absolute;
+				right: 24px;
+				top: 50%;
+				transform: translateY(-50%);
+				content: url(../icons/plus.svg);
+				height: 20px;
+				width: 20px;
+				transition: all 0.2s ease-in;
+			}
+			&--active {
+				color: #fff;
+				background-color: $colorfirst;
+				&::after {
+					content: url(../icons/minus.svg);
+					transform: translateY(0);
+					top: 30%;
+				}
+			}
+		}
+		// &__open {
+		// 	&--active {
+		// 	}
+		// }
+		&__heading,
+		&__open {
+			padding: 32px 24px;
+		}
+	}
+}
+
+/* Swup-transition */
+
+.transition-fade {
+	transition: 0.4s;
+	opacity: 1;
+}
+
+html.is-animating .transition-fade {
+	opacity: 0;
+}
+
+// Product pages
+
+.cart {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	@include mainbgcol;
+	z-index: 10000;
+	overflow-y: scroll;
+	&__wrapper {
+		width: 100%;
+		max-width: 1200px;
+		display: grid;
+		grid-template-columns: auto auto;
+		gap: 5.8rem;
+		margin: 30px 0 93px;
+	}
+	&__package {
+		img {
+			position: sticky;
+			top: 50%;
+			transform: translateY(-50%);
+			height: 490px;
+		}
+	}
+	&__info {
+		overflow-y: scroll;
+	}
+	&__nav {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		ul {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-start;
+			gap: 32px;
+			li {
+				justify-self: start;
+				list-style-type: none;
+				margin-left: 0;
+			}
+		}
+	}
+	&__close {
+		position: absolute;
+		top: 50%;
+		transform: translateY(-50%);
+		right: 0;
+	}
+	&__heading {
+		padding-top: 86px;
+	}
+	&__articul {
+		padding-top: 40px;
+		font-weight: 600;
+	}
+	&__for {
+		padding-top: 24px;
+	}
+	&__features {
+		display: grid;
+		grid-template-columns: repeat(auto-fill, minmax(312px, 1fr));
+		padding-top: 60px;
+	}
+	&__feature {
+		display: flex;
+		align-items: center;
+	}
+	&__item {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		gap: 12px;
+		&:nth-child(3),
+		&:nth-child(4) {
+			padding-top: 32px;
+		}
+	}
+}

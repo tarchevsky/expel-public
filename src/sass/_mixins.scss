@@ -1,0 +1,55 @@
+@mixin brrmain {
+	border-radius: 0.5rem; // 8px
+}
+
+@mixin brrsec {
+	border-radius: 0.25rem; //4px
+}
+
+@mixin maintextcol {
+	color: #113624;
+}
+
+@mixin sectextcol {
+	color: #ffffff;
+}
+
+@mixin mainbgcol {
+	background-color: #f5f0ea;
+}
+
+@mixin secbgcol {
+	background-color: #113624;
+}
+
+@mixin ptopmin {
+	padding-top: 0.75rem; // 12px
+}
+
+@mixin ptopmed {
+	padding-top: 2rem; // 32px
+}
+
+@mixin ptopmax {
+	padding-top: 4rem; // 64px
+}
+
+@mixin mtopmin {
+	margin-top: 0.75rem; // 12px
+}
+
+@mixin mtopmed {
+	margin-top: 2rem; // 32px
+}
+
+@mixin mtopmax {
+	margin-top: 7.5rem; // 120px
+}
+
+@mixin gapmin {
+	gap: 2rem; // 32px
+}
+
+// @mixin gap {
+// 	gap: ;
+// }

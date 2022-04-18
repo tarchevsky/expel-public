@@ -1,0 +1,60 @@
+// Form properties
+
+input,
+textarea {
+	outline: none;
+	border: 1px solid rgb(207, 205, 205);
+	transition: border 0.3s ease-in;
+}
+
+input,
+textarea {
+	&::placeholder {
+		opacity: 1 !important;
+		transition: opacity 0.3s linear;
+	}
+	&:focus::placeholder {
+		opacity: 0 !important;
+		color: transparent;
+		transition: opacity 0.2s linear;
+		color: white;
+	}
+	&:focus {
+		border: 1px solid $colorfirst;
+	}
+	&::placeholder {
+		font-weight: 400;
+		color: #cfd7d3;
+	}
+}
+
+.add-feedback {
+	&__input {
+		font-size: 18px;
+		width: 100%;
+		padding: 16px;
+		@include brrsec;
+		border: 1px solid rgb(0, 0, 0, 0);
+		&:nth-child(3) {
+			margin-top: 28px;
+		}
+	}
+	&__telemail {
+		width: 100%;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 32px;
+		margin-top: 28px;
+	}
+	&__question {
+		resize: none;
+	}
+	&__policy,
+	.add-feedback__policy--link {
+		font-size: 0.875rem; // 14px
+		line-height: 20px;
+	}
+	&__button {
+		align-self: flex-end;
+	}
+}
